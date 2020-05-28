@@ -6,6 +6,7 @@ import os
 import sys
 
 # Speech Recognition Imports
+# Импорт распознавания речи
 from pydub import AudioSegment
 import speech_recognition as sr
 
