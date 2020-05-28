@@ -20,8 +20,8 @@ if sys.version_info[0] > 3:
     xrange = range
 
 # Firefox / Gecko Driver Related
-FIREFOX_BIN_PATH = r"C:\Program Files (x86)\Mozilla Firefox\firefox.exe"
-GECKODRIVER_BIN = r"C:\geckodriver.exe"
+FIREFOX_BIN_PATH = r"C:\Program Files\Mozilla Firefox\firefox.exe"
+GECKODRIVER_BIN = r"C:\Users\User\Anaconda3\geckodriver.exe"
 
 # Randomization Related
 MIN_RAND        = 0.64
@@ -210,7 +210,7 @@ def main():
     rebreakcaptcha_obj = rebreakcaptcha()
     
     counter = 0
-    for i in xrange(NUMBER_OF_ITERATIONS):
+    for i in range(5):
         if rebreakcaptcha_obj.solve(i):
             counter += 1
             
