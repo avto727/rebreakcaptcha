@@ -70,7 +70,7 @@ class rebreakcaptcha(object):
             iframes = self.driver.find_elements_by_tag_name("iframe")
             
             # Switch focus to ReCaptcha iframe
-            self.driver.switch_to_frame(iframes[0])
+            self.driver.switch_to.frame(iframes[0])
             time.sleep(random.uniform(MIN_RAND, MAX_RAND))
             
             # Verify ReCaptcha checkbox is present
@@ -90,7 +90,7 @@ class rebreakcaptcha(object):
             
     def get_audio_challenge(self, iframes):
         # Switch to the last iframe (the new one)
-        self.driver.switch_to_frame(iframes[-1])
+        self.driver.switch_to.frame(iframes[-1])
         
         # Check if the audio challenge button is present
         if not self.is_exists_by_xpath('//button[@id="recaptcha-audio-button"]'):
@@ -210,7 +210,7 @@ def main():
     rebreakcaptcha_obj = rebreakcaptcha()
     
     counter = 0
-    for i in range(5):
+    for i in xrange(NUMBER_OF_ITERATIONS):
         if rebreakcaptcha_obj.solve(i):
             counter += 1
             
